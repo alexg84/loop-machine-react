@@ -23,7 +23,7 @@ export default function Descrition() {
             <div className="links">
                         <h3>Links</h3>
                 <a className='Link' href="https://github.com/BENJAMIN-1-WS/loop-machine-react"><b>• Git Hub</b></a>
-                <a className='Link' href="https://github.com/BENJAMIN-1-WS/loop-machine-react"><b>• deploy on heroku server</b></a>
+                <a className='Link' href="https://loop-m.herokuapp.com/" > <b>• Link To Heroku Server</b></a>
    
             </div> 
            
