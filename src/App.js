@@ -21,7 +21,6 @@ function App() {
         <Route path="/not-found" component={NotFound}></Route>
         <Redirect to="/not-found"></Redirect>
       </Switch>
-
     </div>
   )
 }

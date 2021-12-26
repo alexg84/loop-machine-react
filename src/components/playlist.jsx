@@ -1,93 +1,59 @@
-import React, { useEffect, useState, useRef } from "react";
-import m1 from "../music/m1.mp3";
-import m2 from "../music/m2.mp3";
-import m3 from "../music/m3.mp3";
-import m4 from "../music/m4.mp3";
-import m5 from "../music/m5.mp3";
-import m6 from "../music/m6.mp3";
-import m7 from "../music/m7.mp3";
-import m8 from "../music/m8.mp3";
-import BootstrapSwitchButton from 'bootstrap-switch-button-react';
-import { ButtonGroup, ToggleButton } from 'react-bootstrap';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlay,
-  faPause,
-  faStop,
-  faRedo,
-  faVolumeMute,
-  faVolumeUp,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useRef } from "react"
+import { playList } from "../data"
 
 export default function Playlist() {
-
-
-  const [checked, setChecked] = useState(false); // toggle mute
-  const [palyList, setPalyList] = useState([
-    { name: "m1", audio: m1, muted: false },
-    { name: "m2", audio: m2, muted: false },
-    { name: "m3", audio: m3, muted: false },
-    { name: "m4", audio: m4, muted: false },
-    { name: "m5", audio: m5, muted: false },
-    { name: "m6", audio: m6, muted: false },
-    { name: "m7", audio: m7, muted: false },
-    { name: "m8", audio: m8, muted: false }
-  ]) // palyList Default songs 
+  const [palyList, setPalyList] = useState(playList) // palyList Default songs
 
   const audioRef = useRef() // audio reference > import from "react"
-  const mute = (name) => { // mute audio funcion
+  const mute = (name) => {
+    // mute audio funcion
     palyList.forEach((element) => {
-      const ele = document.getElementById(element.name);
+      const ele = document.getElementById(element.name)
       if (name === ele.id) {
         if (element.muted === true) {
-          ele.muted = false;
-          element.muted = false;
-          console.log(name + " > " + ele.muted + " > unMute");
-          unMute(name);
-        }
-        else {
-          ele.muted = true;
-          element.muted = true;
-          console.log(name + " > " + ele.muted + " > mute");
+          ele.muted = false
+          element.muted = false
+          console.log(name + " > " + ele.muted + " > unMute")
+          unMute(name)
+        } else {
+          ele.muted = true
+          element.muted = true
+          console.log(name + " > " + ele.muted + " > mute")
         }
       }
     })
   }
-  const unMute = (name) => { //unMute audio funcion
+  const unMute = (name) => {
+    //unMute audio funcion
     palyList.forEach((element) => {
-      const ele = document.getElementsByName(name);
+      const ele = document.getElementsByName(name)
       if (name === ele.id) {
         if (element.muted === false) {
-          ele.muted = true;
-          element.muted = true;
-          console.log(name + " > " + ele.muted + " > mute");
-          mute(name);
-        }
-        else {
-          ele.muted = false;
-          element.muted = false;
-          console.log(name + " > " + ele.muted + " > muted");
+          ele.muted = true
+          element.muted = true
+          console.log(name + " > " + ele.muted + " > mute")
+          mute(name)
+        } else {
+          ele.muted = false
+          element.muted = false
+          console.log(name + " > " + ele.muted + " > muted")
         }
       }
     })
   }
-
-  const onChange = (e) => {// funcion Calculation of song time
+         // calculator Current time of Audio track
+  const onChange = (e) => {
+    console.log("onChange")
     palyList.forEach((element) => {
-      const audio = document.getElementById(element.name);
-      audio.currentTime = (audio.duration / 100) * e.target.value; //  Current time calculator
-      TimerP = audio.currentTime;
+      const audio = document.getElementById(element.name)
+      audio.currentTime = (audio.duration / 100) * e.target.value 
     })
   }
-
-  useEffect(() => { }, [])
-
-  const [TimerP, setTimerP] = useState(0); // toggle mute
 
   return (
     <>
-      <div className="down">
-        <div className="playlist">
+      <div className="AudioTrack">
+        <div className="AudioTrack-playList">
           {palyList.map((p) => {
             return (
               <div key={p.name} className="song">
@@ -96,22 +62,28 @@ export default function Playlist() {
                   key={p.name}
                   id={p.name}
                   src={p.audio}
-                  muted={p.muted}>
-                </audio>
-                
+                  muted={p.muted}
+                ></audio>
+
                 <a>Song: {p.name}</a>
                 <div className="form-check form-switch">
-                  <input className="form-check-input" type="checkbox" id={p.name + "-BootstrapSwitchButton"} onClick={() => mute(p.name)}>
-                  </input>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id={p.name + "-BootstrapSwitchButton"}
+                    onClick={() => mute(p.name)}
+                  ></input>
                   <span>Mute</span>
-                  <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
+                  <label
+                    className="form-check-label"
+                    htmlFor="flexSwitchCheckDefault"
+                  ></label>
                 </div>
               </div>
             )
           })}
         </div>
         <div className="songBarElement">
-
           {/* main range bar  */}
           <div className="rageBar">
             <input
@@ -121,7 +93,7 @@ export default function Playlist() {
               id="RangeForAll"
               step="0.01"
               className="slider"
-              onChange={(e) => onChange(e)}
+              onClick={(e) => onChange(e)}
             ></input>
           </div>
           {/* main range bar  */}
@@ -132,13 +104,13 @@ export default function Playlist() {
                     div className, key = name of the song  key= */
               <div key={p.name} className={p.name}>
                 <div key={p.name} className="songBar" key={p.name}>
-                  <div key={p.name} type="" step="0.01">
-                  </div>
+                  <div key={p.name} min="0" max="8" step="0.01"></div>
                 </div>
               </div>
             )
           })}
         </div>
       </div>
-    </>)
+    </>
+  )
 }

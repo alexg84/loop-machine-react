@@ -2,19 +2,18 @@ body {
   height: 100%;
   width: 100%;
 }
-.LoopMachinCom{
+.LoopMachinCom {
   align-items: center;
   justify-content: center;
   margin: 10px;
 }
-.down {
+.AudioTrack {
   display: flex;
   border: solid 6px rgb(2, 3, 8);
   position: sticky;
 }
 .songBarElement {
   flex-direction: column;
-  height: 100%;
   width: 91.1%;
 }
 .songBar div {
@@ -38,6 +37,12 @@ body {
   justify-content: center;
 }
 .controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.subController {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,8 +78,8 @@ body {
   background-color: rgb(238, 99, 215);
 }
 .slider {
-  position:absolute;
-  width: 91%;
+  position: absolute;
+  width: 80%;
   height: 95%;
   background-color: rgba(240, 248, 255, 0);
   outline: none;
@@ -99,27 +104,29 @@ body {
   background: #e8f800;
   cursor: pointer;
 }
+.description-div{
+  margin:  1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.description-div-down{
 
-
-
-
-.description{
+  margin: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.description-h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
-.gitLink{
-
-
-  font-size: 2em;
-
+.Link{
+  font-size: 1.2em;
 }
-.navBar{
-  top: 0%;
-}
-ul{
-  display :flex;
+
+ul {
+  display: flex;
   z-index: 1;
   background-color: rgb(26, 25, 25);
   justify-content: space-between;
@@ -127,9 +134,18 @@ ul{
   direction: none;
   color: aliceblue;
 }
-.link{
+.link {
   margin: 1em;
   font-size: 1.6em;
   color: aliceblue;
   text-decoration: none;
+}
+.links{
+  margin: 1.5em;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+  margin: 2em;
+  
 }
