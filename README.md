@@ -1,4 +1,7 @@
 # Description - Loop Machine
+
+
+
 <a>• Playing audio tracks simultaneously, it is possible to mute each song individually.</a><br><br>
 <a>• Activating the "Loop" button will allow you to repeat the sound player over and over again. (On. Off) </a><br><br>
 <a>• Activating the Stop button will return the section to the beginning.</a><br><br>
@@ -18,10 +21,9 @@ If you've previously installed create-react-app globally via npm install -g crea
 
 > npm start
 
-Then open http://localhost:3000/ to see your app.
+> Then open [🔗 localhost Server on Port 3000 ! ]( http://localhost:3000/ ) to see your app.
 
- > [🔗 Link To Heroku Server! ]( https://loop-m.herokuapp.com/ )
- > 
+> [🔗 Link To Heroku Server! ]( https://loop-m.herokuapp.com/ )
 <br><br>
 
 
