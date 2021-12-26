@@ -77,6 +77,7 @@ export default function Controller() {
         palyList.forEach((element) => {
             const ele = document.getElementById(element.name)
             ele.play()
+            
         })
         setValue()
     }
@@ -98,6 +99,12 @@ export default function Controller() {
         const ele1 = document.getElementById("m1")
         const ele2 = document.getElementById("RangeForAll")
         const int__ = setInterval(() => {
+            console.log(ele2.value/ 100); //
+            const intervTime=ele2.value/ 100;
+
+            document.getElementById('span').innerHTML=<a id={"span"}>{intervTime}</a>
+
+           // audio.currentTime = (audio.duration / 100) * e.target.value;
             setInt1(int__)
             ele2.value = ele1.currentTime
         }, 1)
