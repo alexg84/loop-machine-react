@@ -1,0 +1,145 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+.LoopMachinCom{
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.bottomBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+}
+.down {
+  display: flex;
+  border: solid 6px rgb(2, 3, 8);
+  position: sticky;
+}
+
+.songBar div {
+  border: solid 1px rgba(1, 2, 1, 0.246);
+  height: 2.5em;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 3px;
+}
+.songBarElement {
+  overflow-x: scroll;
+
+  flex-direction: column;
+  height: 100%;
+  width: 91.1%;
+}
+
+.controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.controllerIcons {
+  font-size: 2em;
+  margin: 0.5em;
+  cursor: pointer;
+  height: 2em;
+}
+.song {
+  border: solid 1px rgba(1, 2, 1, 0.246);
+  width: 20em;
+  margin: 3px;
+    font-size: 1em;
+}
+
+
+.m1 {
+  background-color: rgb(226, 16, 16);
+}
+.m2 {
+  background-color: rgb(238, 150, 8);
+}
+.m3 {
+  background-color: rgb(221, 192, 30);
+}
+.m4 {
+  background-color: rgb(64, 202, 9);
+}
+.m5 {
+  background-color: rgb(10, 160, 206);
+}
+.m6 {
+  background-color: rgb(3, 23, 200);
+}
+.m7 {
+  background-color: rgb(146, 8, 238);
+}
+.m8 {
+  background-color: rgb(238, 99, 215);
+}
+.slider {
+  position:absolute;
+  width: 91%;
+  height: 95%;
+  background-color: rgba(240, 248, 255, 0);
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.rageBar{
+  width: 91%;
+  height: 91%;
+  margin: 3px;
+}
+.slider:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 1px;
+  height: 385px;
+  background: #e8f800;
+  cursor: pointer;
+}
+
+
+
+
+.description{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.gitLink{
+
+
+  font-size: 2em;
+
+}
+.navBar{
+  top: 0%;
+}
+ul{
+  display :flex;
+  z-index: 1;
+  background-color: rgb(26, 25, 25);
+  justify-content: space-between;
+  list-style: none;
+  direction: none;
+  color: aliceblue;
+}
+.link{
+  margin: 1em;
+  font-size: 1.6em;
+  color: aliceblue;
+  text-decoration: none;
+}
