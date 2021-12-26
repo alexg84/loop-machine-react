@@ -5,7 +5,7 @@
 <a>• Playing audio tracks simultaneously, it is possible to mute each song individually.</a><br><br>
 <a>• Activating the "Loop" button will allow you to repeat the sound player over and over again. (On. Off) </a><br><br>
 <a>• Activating the Stop button will return the section to the beginning.</a><br><br>
-<a>• Option to mute the audio tracks.</a><br><br><br>
+<a>• Option to mute the audio tracks.</a><br><br>
 
 **Dev libraries**:` react-router-dom, useState, useRef.`
 
