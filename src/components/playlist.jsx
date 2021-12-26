@@ -8,18 +8,19 @@ import m6 from "../music/m6.mp3";
 import m7 from "../music/m7.mp3";
 import m8 from "../music/m8.mp3";
 import BootstrapSwitchButton from 'bootstrap-switch-button-react';
-import { ButtonGroup ,ToggleButton } from 'react-bootstrap';
+import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faPlay,
-    faPause,
-    faStop,
-    faRedo,
-    faVolumeMute,
-    faVolumeUp,
-}from "@fortawesome/free-solid-svg-icons";
+  faPlay,
+  faPause,
+  faStop,
+  faRedo,
+  faVolumeMute,
+  faVolumeUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Playlist() {
+
 
   const [checked, setChecked] = useState(false); // toggle mute
   const [palyList, setPalyList] = useState([
@@ -31,23 +32,23 @@ export default function Playlist() {
     { name: "m6", audio: m6, muted: false },
     { name: "m7", audio: m7, muted: false },
     { name: "m8", audio: m8, muted: false }
-  ])
-  const audioRef = useRef() // audio reference > import from "react"
+  ]) // palyList Default songs 
 
-  const mute = (name) => { //mute audio funcion
+  const audioRef = useRef() // audio reference > import from "react"
+  const mute = (name) => { // mute audio funcion
     palyList.forEach((element) => {
       const ele = document.getElementById(element.name);
       if (name === ele.id) {
-        if(element.muted === true){
+        if (element.muted === true) {
           ele.muted = false;
           element.muted = false;
-          console.log(name + " > " + ele.muted +" > unMute" );
+          console.log(name + " > " + ele.muted + " > unMute");
           unMute(name);
         }
-        else{
+        else {
           ele.muted = true;
           element.muted = true;
-          console.log(name + " > " + ele.muted +" > mute" );
+          console.log(name + " > " + ele.muted + " > mute");
         }
       }
     })
@@ -56,29 +57,33 @@ export default function Playlist() {
     palyList.forEach((element) => {
       const ele = document.getElementsByName(name);
       if (name === ele.id) {
-        if(element.muted === false){
+        if (element.muted === false) {
           ele.muted = true;
           element.muted = true;
-          console.log(name + " > " + ele.muted +" > mute" );
+          console.log(name + " > " + ele.muted + " > mute");
           mute(name);
         }
-        else{
+        else {
           ele.muted = false;
           element.muted = false;
-          console.log(name + " > " + ele.muted +" > muted" );
+          console.log(name + " > " + ele.muted + " > muted");
         }
       }
     })
   }
 
-  const onChange = (e) => {
+  const onChange = (e) => {// funcion Calculation of song time
     palyList.forEach((element) => {
       const audio = document.getElementById(element.name);
-      audio.currentTime = (audio.duration / 100) * e.target.value; //  Current time calculator 
+      audio.currentTime = (audio.duration / 100) * e.target.value; //  Current time calculator
+      TimerP = audio.currentTime;
     })
   }
 
   useEffect(() => { }, [])
+
+  const [TimerP, setTimerP] = useState(0); // toggle mute
+
   return (
     <>
       <div className="down">
@@ -91,23 +96,16 @@ export default function Playlist() {
                   key={p.name}
                   id={p.name}
                   src={p.audio}
-                  muted={p.muted}
-                >
+                  muted={p.muted}>
                 </audio>
-
-                {/* <span name={"span"} >{ "Song track :  "+p.name+"  |  Length : 00:00:00" }</span> */}
                 
-                <div id={"span"} >{} sec</div>
-                
-                <br></br>
-                
-                 Mute <BootstrapSwitchButton 
-                id={p.name+"-BootstrapSwitchButton"} 
-                size="xs"
-                onChange={()=>mute(p.name)}
-                
-                /> 
-
+                <a>Song: {p.name}</a>
+                <div className="form-check form-switch">
+                  <input className="form-check-input" type="checkbox" id={p.name + "-BootstrapSwitchButton"} onClick={() => mute(p.name)}>
+                  </input>
+                  <span>Mute</span>
+                  <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
+                </div>
               </div>
             )
           })}
@@ -134,7 +132,7 @@ export default function Playlist() {
                     div className, key = name of the song  key= */
               <div key={p.name} className={p.name}>
                 <div key={p.name} className="songBar" key={p.name}>
-                  <div  key={p.name} type="" step="0.01">
+                  <div key={p.name} type="" step="0.01">
                   </div>
                 </div>
               </div>

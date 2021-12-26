@@ -33,10 +33,7 @@ export default function Controller() {
         { name: "m8", audio: m8 },
     ])
     const [checked, setChecked] = useState(false);
-    const [radioValue, setRadioValue] = useState('1');
-    const radios = [
-        { name: 'Active', value: '1' }
-      ];
+   
 
 
 
@@ -99,12 +96,8 @@ export default function Controller() {
         const ele1 = document.getElementById("m1")
         const ele2 = document.getElementById("RangeForAll")
         const int__ = setInterval(() => {
-            console.log(ele2.value/ 100); //
             const intervTime=ele2.value/ 100;
-
-            document.getElementById('span').innerHTML=<a id={"span"}>{intervTime}</a>
-
-           // audio.currentTime = (audio.duration / 100) * e.target.value;
+            // console.log(intervTime);
             setInt1(int__)
             ele2.value = ele1.currentTime
         }, 1)
@@ -142,13 +135,15 @@ export default function Controller() {
                     icon={faPause}
                     onClick={() => Pause()}
                 />
+        
 
 
-                {/* 
-                toggle of status loop on/off 
-                <div id="statusLoop" >off</div>
-                */}
+                    {/* <span>{intervTime}</span> */}
+                
 
+
+
+                
                 <ButtonGroup className="mb-2">
                             <ToggleButton
                                 className="mb-2"
