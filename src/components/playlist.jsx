@@ -46,7 +46,8 @@ export default function Playlist() {
     console.log("onChange")
     palyList.forEach((element) => {
       const audio = document.getElementById(element.name)
-      audio.currentTime = (audio.duration / 100) * e.target.value 
+      // console.log(e.target.valueAsNumber);
+      audio.currentTime = e.target.valueAsNumber
     })
   }
 

@@ -57,8 +57,6 @@ export default function Controller() {
     const ele1 = document.getElementById("m1")
     const ele2 = document.getElementById("RangeForAll")
     const int__ = setInterval(() => {
-      const intervTime = ele2.value
-      console.log(intervTime)
       setInt1(int__)
       setCurrentTime(ele1.currentTime)
       ele2.value = ele1.currentTime
